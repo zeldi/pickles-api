@@ -12,6 +12,14 @@ $ yarn add express yup config cors express pino pino-pretty dayjs dotenv
 $ yarn add nodemailer && yarn add -D @types/nodemailer
 
 ```
+## Running Application
+You should now be able to run the application with hot reloading like so:
+1. Using yarn
+    ```bash
+    $ yarn dev
+    ```
+2. Using Docker
+
 
 ## Calling REST API
 
