@@ -28,7 +28,7 @@ export let addUser = (req: Request, res: Response) => {
     const mailOptions = {
       from: "zeldi.suryady@gmail.coom", // sender address
       to: email, // list of receivers
-      subject: "Data Received", // Subject line
+      subject: "[Pickles Auction] Data Received", // Subject line
       text: "TEST", // plain text body
       html: createEmailTemplate(id,name,email), // html body
     };    
