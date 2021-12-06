@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --config nodemon.json src/app.ts",
-    "test": "mocha -r ts-node/register test/**/*.spec.ts"
+    "test": "mocha -r ts-node/register test/**/*.spec.ts",
+    "build": "tsc -p ."
   },
   "dependencies": {
     "@types/chai": "^4.2.22",
