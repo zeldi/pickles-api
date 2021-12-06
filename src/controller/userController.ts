@@ -42,7 +42,7 @@ export let addUser = (req: Request, res: Response) => {
         });
       }
       return res.status(200).json({
-        message: "Data has been received"
+        message: "User data has been sent to email"
       })
     });
 
