@@ -28,7 +28,7 @@ The dependencies of this API are listed in `package.json`.
     $ yarn install
     ```
 
-Now, you should now be able to run the application with hot reloading like so:
+    Now, you should now be able to run the application with hot reloading like so:
 
 2. Using yarn
     ```bash
@@ -77,13 +77,13 @@ curl --location --request POST 'localhost:9090/hello' \
     2 passing (1s)
     ``` 
 
-## Running as Docker
+## Deployment as Docker
 
 1. Build container image
     ```bash
     $ docker build -t pickles:v1 .
     ```
-2. Run the application API as container image
+2. Run the application API as container 
     ```bash
     $ docker run --rm -d -p 9090:9090 --name pickles pickles:v1
     ```

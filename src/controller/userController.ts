@@ -5,10 +5,31 @@ import createEmailTemplate from "../utils/createEmailTemplate";
 import log from "../logger"
 dotenv.config()
 
+
+// Controller for root (/) endpoints
 export let welcome = (req: Request, res: Response) => {
   res.send("Welcome to Pickle API");
 };
 
+// Controller for checking microservice operational status
+export let checkHealth = (req:Request, res:Response) => {
+  // Here we assume healthy routines is performed to check 
+  // the downstream components that it depends on (e.g. if database connection is up)
+
+  const healthcheck: unknown = {
+		uptime: process.uptime(),
+		message: 'OK',
+		timestamp: Date.now()
+	};
+
+  try {
+		res.send(healthcheck);
+	} catch (e) {
+		res.status(503).send();
+	}
+}
+
+// Controller for accepting payload and mailing
 export let addUser = (req: Request, res: Response) => {
     const {id, name, email } = req.body
 

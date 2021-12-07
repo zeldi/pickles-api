@@ -14,7 +14,7 @@ const data = {
 }
 
 describe("Testing GET (/) endpoint", () => {
-  it("should return 'Welcome to Pickle API' on call", async () => {
+  it("it should return 'Welcome to Pickle API' on call", async () => {
     return chai
       .request(app)
       .get("/")
@@ -22,6 +22,19 @@ describe("Testing GET (/) endpoint", () => {
         chai.expect(res.text).to.eql("Welcome to Pickle API");
       });
   });
+});
+
+describe('Testing Healthcheck (/healthz) endpoint', () => {
+	it('it should return 200 if API service is healthy', async () => {
+    return chai
+      .request(app)
+      .get("/healthz")
+      .then( res => {
+        chai.expect(res.status).to.equal(200);
+        chai.expect(res.body.uptime).greaterThan(0);
+      })
+	});
+
 });
 
 describe("Testing POST /api/data endpoint", () => {
