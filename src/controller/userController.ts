@@ -41,6 +41,7 @@ export let addUser = (req: Request, res: Response) => {
           message: "Server Error"
         });
       }
+      log.info('User data has been sent to email ...');
       return res.status(200).json({
         message: "User data has been sent to email"
       })
