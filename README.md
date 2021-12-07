@@ -1,6 +1,6 @@
 ## Description
 
-This app is simple REST API app from emailing service with the following specifications:
+This app is a simple REST API app for emailing service with the following specifications:
 * Accepts a JSON Payload via REST API
 * Sends email via email delivery service to email address specied in the JSON payload.
 
@@ -19,7 +19,7 @@ As example, this app received a simple user data as payload.
 
 
 ## App Dependencies
-The REST API is build with `typescript` and some dependencies are required.
+The REST API is built with `typescript` and some dependencies are required.
 The dependencies of this API are listed in `package.json`.
  
 ## Running Application
@@ -56,7 +56,7 @@ curl --location --request POST 'localhost:9090/hello' \
 
 ### Dependecies
 
-1. To test the REST API, we use `mocha` and `chai` modules.
+1. To implement simple unit test for the REST API, we use `mocha` and `chai` modules.
 2. To install dependencies for unit test, run the following command:
     ```bash
     $ yarn add chai chai-http mocha @types/chai @types/chai-http @types/mocha --save-dev
