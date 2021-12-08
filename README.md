@@ -1,28 +1,45 @@
-## Description
+# Description
 
 This app is a simple REST API app for emailing service with the following specifications:
 * Accepts a JSON Payload via REST API
 * Sends email via email delivery service to email address specied in the JSON payload.
 
-As example, this app received a simple user data as payload.
+# Specifications
+## API Endpoints
+This app implements three (3) simple API endpoints:
 
-```JSON
-{
-    "id": "123", 
-    "name": "name",
-    "email": "user@outlook.com"
-}
-```
-> __Note__: 
-> * No data validation is done. 
-> * Data validation can be performed with the help of `yup` modules
+### GET `/` 
+This endpoint will simply return welcoming message 
+
+### GET `/healthz` 
+* This endpoint return the status of a service and its dependencies.
+* Having health check API endpoint is a quick, standardized way to validate the status of a microservice and its dependencies.
+* Having health check API endpoint is recommended to ensure availability of a service.
+* In this implementation, the endpoint is implemented as proof of concept. 
+
+### POST `/api/data` 
+* This endpoint receives JSON payload and sends email via email delivery service to email address specied in the JSON payload.
+* As example, this app received a simple user data as payload.
+
+    ```JSON
+    {
+        "id": "123", 
+        "name": "name",
+        "email": "user@outlook.com"
+    }
+    ```
+    > __Note__: 
+    > * No data validation is done. 
+    > * Data validation can be performed with the help of `yup` modules 
+---
 
 
 ## App Dependencies
 The REST API is built with `typescript` and some dependencies are required.
 The dependencies of this API are listed in `package.json`.
  
-## Running Application
+# Running Application
+## Setting Up the API Service
 1. Installing Dependencies:
     ```bash
     $ yarn install
@@ -30,7 +47,7 @@ The dependencies of this API are listed in `package.json`.
 
     Now, you should now be able to run the application with hot reloading like so:
 
-2. Using yarn
+2. Running in Development environment using `yarn`
     ```bash
     $ yarn dev
     ```
@@ -54,9 +71,9 @@ curl --location --request POST 'localhost:9090/hello' \
 
 ## Unit Test
 
-### Dependecies
+### Dependencies
 
-1. To implement simple unit test for the REST API, we use `mocha` and `chai` modules.
+1. In implementing simple unit test for the REST API, we use `mocha` and `chai` modules.
 2. To install dependencies for unit test, run the following command:
     ```bash
     $ yarn add chai chai-http mocha @types/chai @types/chai-http @types/mocha --save-dev
