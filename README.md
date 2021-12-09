@@ -124,7 +124,7 @@ curl --location --request POST 'localhost:9090/hello' \
 * Container Platform such as `Kubernetes` or `Swarm` will ensures the High Availabily and Scalability of the microservices.
 
 
-![image info](./deployment-architecture.png)
+![image info](./deployment_architecture.png)
 
 ## External Services
 - sendinblue.com (used as email service)
