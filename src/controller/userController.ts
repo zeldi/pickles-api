@@ -30,6 +30,7 @@ export let checkHealth = (req:Request, res:Response) => {
 }
 
 // Controller for accepting payload and mailing
+// Todo: Implement Circuit-Breaker
 export let addUser = (req: Request, res: Response) => {
     const {id, name, email } = req.body
 

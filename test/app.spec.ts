@@ -6,7 +6,7 @@ import "mocha";
 chai.use(chaiHttp);
 const expect = chai.expect;
 
-/* sample payload for unit test */
+/* sample JSON payload for unit test */
 const data = {
   "id": "123",
   "name": "zeldi",
