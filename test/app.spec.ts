@@ -14,7 +14,7 @@ const data = {
 }
 
 describe("Testing GET (/) endpoint", () => {
-  it("it should return 'Welcome to Pickle API' on call", async () => {
+  it("It should return 'Welcome to Pickle API' on call", async () => {
     return chai
       .request(app)
       .get("/")
@@ -25,7 +25,7 @@ describe("Testing GET (/) endpoint", () => {
 });
 
 describe('Testing Healthcheck (/healthz) endpoint', () => {
-	it('it should return 200 if API service is healthy', async () => {
+	it('It should return 200 if API service is healthy', async () => {
     return chai
       .request(app)
       .get("/healthz")
@@ -38,7 +38,7 @@ describe('Testing Healthcheck (/healthz) endpoint', () => {
 });
 
 describe("Testing POST /api/data endpoint", () => {
-  it("should return 'User data has been sent to email' on call", async () => {
+  it("It should return 'User data has been sent to email' on call", async () => {
     return chai
       .request(app)
       .post("/api/data")
