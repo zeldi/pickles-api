@@ -13,12 +13,15 @@ This endpoint will simply return welcoming message
 
 ### GET `/healthz` 
 * This endpoint return the status of a service and its dependencies.
-* Having health check API endpoint is a quick, standardized way to validate the status of a microservice and its dependencies.
+* Having `health check API endpoint` is a quick and standardized way to validate the status of a microservice and its dependencies.
 * Having health check API endpoint is recommended to ensure availability of a service.
-* In this implementation, the endpoint is implemented as proof of concept. 
+* In this case, the `health status` of the API is implemented by simply checking the `uptime`.
+ 
 
 ### POST `/api/data` 
 * This endpoint receives JSON payload and sends email via email delivery service to email address specied in the JSON payload.
+* Since this API requires connection to external mail services (e.g., sendinblue mailing service), the implementation of `circuit-breaker` is possibly required to gracefully handle service unavailability.
+* However, in this sample of pickles-api, the implementation of `circuit-breaker` is not implemented due to time constraint.
 * As example, this app received a simple user data as payload.
 
     ```JSON
@@ -114,6 +117,15 @@ curl --location --request POST 'localhost:9090/hello' \
         "email": "zeldi.syd@outlook.com"
     }'
     ```
+## Typical HA Microservices Deployment Environment
+
+* Figure below highlights sample of architectural deployment of microservices:
+* Typical environment to deploy microservices in production is in a container cluster such as `Swarm Cluster` or `Kubernetes Cluster`.
+* Container Platform such as `Kubernetes` or `Swarm` will ensures the High Availabily and Scalability of the microservices.
+
+
+![image info](./deployment-architecture.png)
 
 ## External Services
 - sendinblue.com (used as email service)
+
