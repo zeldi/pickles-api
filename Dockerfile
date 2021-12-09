@@ -6,3 +6,4 @@ RUN yarn install
 COPY . ./
 RUN yarn run build
 ENTRYPOINT [ "node","dist/src/app.js"]
+
