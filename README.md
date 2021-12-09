@@ -33,7 +33,8 @@ This endpoint will simply return welcoming message
     ```
     > __Note__: 
     > * No data validation is done. 
-    > * Data validation can be performed with the help of `yup` modules 
+    > * Data validation can be performed with the help of `yup` modules
+    > * `circuit-breaker` is not implemented. 
 ---
 
 
@@ -63,13 +64,9 @@ The dependencies of this API are listed in `package.json`.
 ## Calling REST API
 
 ```bash
-curl --location --request POST 'localhost:9090/hello' \
+curl --location --request POST 'http://localhost:9090/api/data' \
 --header 'Content-Type: application/json' \
---data-raw '{
-    "id": "123",
-    "name": "zeldi",
-    "email": "zeldi.syd@outlook.com"
-}'
+--data-raw '{ "id": "123","name": "zeldi","email": "zeldi.syd@outlook.com"}'
 ```
 
 ## Unit Test
@@ -117,6 +114,7 @@ curl --location --request POST 'localhost:9090/hello' \
         "email": "zeldi.syd@outlook.com"
     }'
     ```
+    
 ## Typical HA Microservices Deployment Environment
 
 * Figure below highlights sample of architectural deployment of microservices:
